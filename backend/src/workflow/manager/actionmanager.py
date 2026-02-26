@@ -95,3 +95,6 @@ class ActionManager:
         rule = self.get_rule(transition)
         if rule is not None:
             del self.storage[rule.rule.__name__]
+
+    def delete_all_rules(self):
+        return [self.delete_rule_for(t) for t in self.portal_workflow.getTransitions()]
