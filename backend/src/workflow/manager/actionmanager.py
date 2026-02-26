@@ -97,4 +97,7 @@ class ActionManager:
             del self.storage[rule.rule.__name__]
 
     def delete_all_rules(self):
-        return [self.delete_rule_for(t) for t in self.portal_workflow.getTransitions()]
+        if self.storage is not None:
+            for rule in self.storage.values():
+                if rule.__name__.startswith('workflow_manager_transition_'):
+                    del self.storage[rule.__name__]
