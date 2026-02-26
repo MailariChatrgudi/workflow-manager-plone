@@ -154,6 +154,7 @@ const Sidebar = (props) => {
           key: 'transitions',
           title: intl.formatMessage(messages.transitions),
           content: (
+            
             <Transition
               workflowId={currentWorkflow.id}
               workflow={currentWorkflow}
@@ -190,7 +191,7 @@ const Sidebar = (props) => {
       <BodyClass
         className={expanded ? 'has-sidebar' : 'has-sidebar-collapsed'}
       />
-      
+
       <div
         className={cx('sidebar-container', { collapsed: !expanded })}
         style={size > 0 ? { width: size } : null}
